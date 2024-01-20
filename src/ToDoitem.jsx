@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./index.css"
 
 function ToDoitem(props){
 
@@ -10,8 +11,11 @@ function handleClick(){
     });
 }
 
-    return <div onClick={handleClick}>
+    return   <div className="list"><div onClick={handleClick}>
     <li  style={{textDecoration: click ? "line-through" : "none"}}>{props.text}</li>
+    </div>
+    <button onClick={() => {props.oncheck(props.id);}}>  <span>-</span>
+      </button>
     </div>
 }
 
