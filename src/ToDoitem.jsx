@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./index.css"
+import "./index.css";
+import { motion } from "framer-motion";
 
 function ToDoitem(props){
 
@@ -14,8 +15,14 @@ function handleClick(){
     return   <div className="list"><div onClick={handleClick}>
     <li  style={{textDecoration: click ? "line-through" : "none"}}>{props.text}</li>
     </div>
-    <button onClick={() => {props.oncheck(props.id);}}>  <span>-</span>
-      </button>
+    <motion.button
+     whileHover={{
+               scale: 1.2,
+               transition: { duration: 0.3 },
+               }}            
+     onClick={() => {props.oncheck(props.id);}}> 
+      <span>-</span>
+      </motion.button>
     </div>
 }
 
