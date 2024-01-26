@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ToDoitem from "./ToDoitem";
-import "./index.css"
+import "./index.css";
+import { motion } from "framer-motion";
 
 function App() {
   const [useText, setUseText] = useState();
@@ -33,9 +34,14 @@ function App() {
       </div>
       <div className="form">
         <input onChange={handleText} type="text" value={useText} />
-        <button onClick={handleClick}>
+        <motion.button
+        whileHover={{
+               scale: 1.2,
+               transition: { duration: 0.3 },
+               }} 
+         onClick={handleClick}>
           <span>Add</span>
-        </button>
+        </motion.button>
       </div>
       <div>
         <ul>
